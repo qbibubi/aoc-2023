@@ -28,7 +28,18 @@ def part1(data):
 
 
 def part2(data):
-    return None
+    result = 0
+    for line in data:
+        card = line.split(': ')
+        cards = card[1].split('| ')
+        winning = cards[0].split()
+        choices = cards[1].split()
+        matching = 0
+        for choice in choices:
+            if choice in winning:
+                if matching < 1:
+                    matching += 1
+    return result
 
 
 ################################################################################

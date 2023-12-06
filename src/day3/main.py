@@ -7,6 +7,8 @@ from pprint import pp
 
 
 def part1(data):
+    for line in data:
+        print(line)
     return None
 
 
@@ -30,7 +32,7 @@ def parse(path):
     # data = [[x.split(",") for x in line] for line in data]
     # data = [line.split(" ") for line in data]
     # data = [line.split(",") for line in data]
-    # data = [line.strip("\n") for line in data]
+    data = [line.strip("\n") for line in data]
     # data = [x.split(" -> ") for x in data]
     # data = [x[0] for x in data]
 
