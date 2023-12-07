@@ -28,19 +28,27 @@ def part1(data):
 
 
 def part2(data):
-    result = 0
+    current_card = 0
+    copies = { 1: 1 }
+
     for line in data:
+        current_card+=1
         card = line.split(': ')
+        card_info = card[0].split(' ')
+        card_id = card_info[1]
         cards = card[1].split('| ')
+
         winning = cards[0].split()
         choices = cards[1].split()
+
         matching = 0
         for choice in choices:
             if choice in winning:
-                if matching < 1:
-                    matching += 1
-    return result
-
+                matching+=1
+                key = current_card+matching
+                copies[key] = copies.get(key, 0) + 1
+        print(f"Card id: {card_id}, Key: {key}, Copies: {copies}, Matching: {matching}")
+    return copies
 
 ################################################################################
 
@@ -62,8 +70,8 @@ def parse(path):
     return data
 
 
-data = "input.txt"
-# data = "example.txt"
+# data = "  input.txt"
+data = "example.txt"
 
 print(part1(parse(data)))
 print(part2(parse(data)))
