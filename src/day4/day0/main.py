@@ -7,44 +7,15 @@ from pprint import pp
 
 
 def part1(data):
-    result = 0
-    for line in data:
-        card = line.split(': ')
-        cards = card[1].split('| ')
-        winning = cards[0].split()
-        choices = cards[1].split()
-        matching = 0
-        for choice in choices:
-            if choice in winning:
-                if matching < 1:
-                    matching += 1
-                else:
-                    matching *= 2
-        result+=matching
-    return result
+    return None
 
 
 ################################################################################
 
 
 def part2(data):
-    copies = {}
+    return None
 
-    for line in data:
-        card = line.split(': ')
-        card_info = card[0].split(' ')
-        card_id = int(card_info[1])
-        cards = card[1].split('| ')
-
-        winning = cards[0].split()
-        choices = cards[1].split()
-
-        matching = 0
-        for choice in choices:
-            if choice in winning:
-                copies[card_id+matching] = "cock" 
-                matching += 1
-        print(f'ID: {card_id}, Copies: {copies}')
 
 ################################################################################
 
@@ -59,7 +30,7 @@ def parse(path):
     # data = [[x.split(",") for x in line] for line in data]
     # data = [line.split(" ") for line in data]
     # data = [line.split(",") for line in data]
-    data = [line.strip("\n") for line in data]
+    # data = [line.strip("\n") for line in data]
     # data = [x.split(" -> ") for x in data]
     # data = [x[0] for x in data]
 
